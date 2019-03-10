@@ -30,13 +30,9 @@ function changeImage(){
 	<input class="easyui-textbox" type="text" name="val_code" maxLength="21" size="23"/>
 	<img id="image01" src="image.jsp"/>
 	<a href="javascript:void(0)"  onclick="changeImage()">看不清</a>
-	<br/>
-			
-			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="form.submit()">登录</a>
-			
-			 
+	<br/><br/>			
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="form.submit()">登录</a>					 
 	</FORM>
-
 </DIV>
 
 <%@ include file="bottom.jsp"%>

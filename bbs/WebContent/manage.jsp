@@ -20,6 +20,23 @@
 			$("#tt").tabs("select","用户管理");
 		}
 	}
+	
+	function openBoardTab(){
+		var tab=$("#tt").tabs("getTab","主题管理");
+		
+		if(tab==null){
+			$("#tt").tabs("add",
+				{
+					title:"主题管理",
+					selected:true,
+					closable:true,
+					href:"manage-board.jsp"
+				}		
+			);
+		}else{
+			$("#tt").tabs("select","主题管理");
+		}
+	}
 </script>
 <meta charset="UTF-8">
 <title>后台管理</title>
@@ -27,11 +44,12 @@
 </head>
 <body id="cc" class="easyui-layout" style="width:100%;height:100%;">
 	    <div data-options="region:'north'" style="height:100px;"></div>
-	    <div data-options="region:'south'" style="height:100px;"></div>	    
+	    <div data-options="region:'south'" style="height:100px;"><%@ include file="foot.jsp" %></div>	    
     	<div id="aa" class="easyui-accordion" style="width:12%;height:100%;" data-options="region:'west',title:'West'">
 		    <div title="Title1" data-options="iconCls:'icon-save'" style="overflow:auto;padding:10px;">
 				<a href="#" class="easyui-linkbutton c1" style="width:100%" onclick="openUserTab()" >用户管理</a>
-				<a href="#" class="easyui-linkbutton c1" style="width:100%" onclick="" >主题管理</a>
+				<br><br>
+				<a href="#" class="easyui-linkbutton c1" style="width:100%" onclick="openBoardTab()" >主题管理</a>
 		    </div>
 		    <div title="Title2" data-options="iconCls:'icon-reload'" style="padding:10px;">
 				content2
@@ -42,7 +60,7 @@
 		</div>    
     	<div id="tt" class="easyui-tabs"  data-options="region:'center',title:'主面板'" style="padding:5px;background:#eee;">
 		    <div title="Tab1" style="padding:20px;display:none;">
-				tab1
+				<div id="cc" class="easyui-calendar" style="width:20%;height:50%;"></div> 
 		    </div>
 		    <div title="Tab2" data-options="closable:true" style="overflow:auto;padding:20px;display:none;">
 				tab2
@@ -51,6 +69,6 @@
 				tab3
 		    </div>		
 	    </div>
-
+	
 </body>
 </html>

@@ -8,7 +8,7 @@
 </script>
 <meta charset="UTF-8">
 <title>后台管理</title>
-<%@ include file="links.jsp" %>
+<%@ include file="../links.jsp" %>
 </head>
 <body id="cc" class="easyui-layout" style="width:100%;height:100%;">
 	    <div data-options="region:'north'" style="height:100px;"></div>	      
