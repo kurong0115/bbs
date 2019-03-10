@@ -17,10 +17,7 @@
 <!--      主体        -->
 <DIV><br/>
 	<!--      导航        -->
-<DIV>
-	&gt;&gt;<B><a href="index.s">论坛首页</a></B>&gt;&gt;
-	<B><a href="list.html">灌水乐园</a></B>
-</DIV>
+<%@ include file="nav.jsp" %>
 	<br/>
 	<!--      回复、新帖        -->
 	<DIV>

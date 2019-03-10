@@ -60,7 +60,7 @@ public class TopicServlet extends BaseServlet {
 		}
 		topic.setPublishtime(new Timestamp(System.currentTimeMillis()));	
 		topic.setUid(user.getUid());
-		System.out.println(topic);
+		System.out.println("获取的"+topic);
 		
 		try {
 			tb.post(topic);
