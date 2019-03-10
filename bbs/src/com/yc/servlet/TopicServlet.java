@@ -25,9 +25,16 @@ public class TopicServlet extends BaseServlet {
     private TopicDao td=new TopicDao();
 	private TopicBiz tb=new TopicBiz();
 	
+	/**
+	 * é›·å‰§å½“å‰æ¿å—ä¸‹æ‰€æœ‰çš„å¸–å­
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	public void list(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String boardId=request.getParameter("boardid");
-		//½«µ±Ç°µÄ°å¿éÃû±£´æÆğÀ´,ÒÔ±ãºóÃæÃ¿´Î¿ÉÒÔ»ñÈ¡µ½°å¿éÃû
+		//å°†æ¿å—åä¿å­˜åˆ°session
 		String boardname=request.getParameter("boardname");
 		HttpSession session = request.getSession();
 		session.setAttribute("boardname", boardname);
@@ -36,7 +43,14 @@ public class TopicServlet extends BaseServlet {
 		request.setAttribute("data", data);
 		request.getRequestDispatcher("list.jsp").forward(request, response);
 	}
-
+	
+	/**
+	 * å®ç°å‘å¸–åŠŸèƒ½
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	public void post(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Map<String, String[]> parameterMap = request.getParameterMap();
 		TblTopic topic = MyUtils.mapToJavaBean(parameterMap, TblTopic.class);
@@ -59,6 +73,13 @@ public class TopicServlet extends BaseServlet {
 		}
 	}
 	
+	/**
+	 * æ˜¾ç¤ºè´´å­çš„è¯¦ç»†ä¿¡æ¯
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	public void detail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String topicid=request.getParameter("topicid");
 		List<Map<String,Object>> data=tb.selectByDetail(topicid);

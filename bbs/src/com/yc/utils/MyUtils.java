@@ -114,6 +114,10 @@ public class MyUtils {
 	    return bi;
 	}
 	
+	/**
+	 * 生成一个图片验证码
+	 * @return
+	 */
 	public static String createCode() {
 		StringBuffer str=new StringBuffer();
 		Random r=new Random();

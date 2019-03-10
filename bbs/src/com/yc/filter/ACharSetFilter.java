@@ -21,7 +21,9 @@ public class ACharSetFilter implements Filter {
 	public void destroy() {
 	}
 
-	
+	/**
+	 * 把请求和响应的页面的字符集改成utf-8
+	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");

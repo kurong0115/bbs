@@ -28,26 +28,28 @@ public class BAuthFilter implements Filter {
 		
 	}
 
-	
+	/**
+	 * åˆ¤æ–­æ˜¯å¦ç™»å½•,å¦‚æœªç™»å½•åˆ™è½¬åˆ°ç™»å½•ç•Œé¢,ç™»é™†æˆåŠŸåè¿”å›ä¸Šä¸€ä¸ªç•Œé¢
+	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest req=(HttpServletRequest)request;
 		HttpServletResponse res=(HttpServletResponse)response;
 		TblUser user=(TblUser)req.getSession().getAttribute("user");
 		
 		
-		//ÅĞ¶ÏÊÇ·ñµÇÂ¼
+		//åˆ¤æ–­ç™»å½•çŠ¶æ€
 		if(user==null) {
-			//»ñÈ¡ÇëÇóµØÖ·
+			//è·å–è¯·æ±‚çš„urlÖ·
 			String uri=req.getRequestURI();
 			System.out.println(uri);
-			//»ñÈ¡ÇëÇó²ÎÊı
+			//è·å–è¯·æ±‚å‚æ•°
 			Map<String, String[]> map = req.getParameterMap();
-			//±£´æµØÖ·ºÍ²ÎÊı--->session
+			//å°†æ•°æ®ä¿å­˜--->session
 			Map<String,String[]> newmap=new HashMap<>();
 			newmap.putAll(map);
 			req.getSession().setAttribute("callback-url", uri);
 			req.getSession().setAttribute("callback-map", newmap);
-			req.setAttribute("msg", "ÇëÏÈµÇÂ¼");
+			req.setAttribute("msg", "è¯·å…ˆç™»å½•");
 			req.getRequestDispatcher("login.jsp").forward(req, res);			
 		}else {
 			chain.doFilter(request, response);

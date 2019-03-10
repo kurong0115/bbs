@@ -22,7 +22,9 @@ public class IndexServlet extends HttpServlet {
         super();
     }
 
-	
+	/**
+	 * 查询主界面所有的信息
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Map<String, Object>> data = bdao.queryIndex();
 		request.setAttribute("data", data);
@@ -30,8 +32,7 @@ public class IndexServlet extends HttpServlet {
 	}
 
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		doGet(request, response);
 	}
 

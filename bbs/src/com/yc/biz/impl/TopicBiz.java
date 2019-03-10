@@ -8,6 +8,12 @@ import com.yc.dao.TopicDao;
 
 public class TopicBiz {
 	private TopicDao td=new TopicDao();
+	
+	/**
+	 * 发帖功能
+	 * @param topic
+	 * @throws BizException
+	 */
 	public void post(TblTopic topic) throws BizException {
 		if(topic.getTitle().length()<2) {
 			throw new BizException("标题不能少于两个字符");
@@ -18,6 +24,11 @@ public class TopicBiz {
 		td.insert(topic);
 	}
 	
+	/**
+	 * 根据帖子id查询数据
+	 * @param topicid
+	 * @return
+	 */
 	public List<Map<String, Object>> selectByDetail(String topicid) {		
 		return td.selectByDetail(topicid);
 	}

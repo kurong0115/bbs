@@ -20,7 +20,14 @@ import com.yc.utils.MyUtils;
 public class ReplyServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
 	private ReplyBiz rb=new ReplyBiz();
-       
+    
+	/**
+	 * 回帖功能
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	public void reply(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Map<String, String[]> parameterMap = request.getParameterMap();
 		TblReply reply = MyUtils.mapToJavaBean(parameterMap, TblReply.class);
