@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="header.jsp"%>
-
+<%@ include file="links.jsp" %>
 <script type="text/javascript">
 function changeImage(){
 	document.getElementById("image01").src="image.jsp?" + new Date();
@@ -21,13 +21,13 @@ function changeImage(){
 		<font color="red">${msg }</font>
 	    <input type="hidden" name="op" value="login" />
 		<br />用户名 &nbsp;
-		<INPUT class="input" tabIndex="1" type="text"
-			maxLength="20" size="35" name="uname" required="required"> <br />
-			密 码 &nbsp;<INPUT
-			class="input" tabIndex="2" type="password" maxLength="20" size="40"
-			name="upass" required="required"> <br />
-			验证码：
-	<input type="text" name="val_code" />
+		<INPUT class="easyui-textbox" tabIndex="1" type="text"
+			maxLength="20" size="40" name="uname"> <br/>
+			<br/>
+			密&nbsp;&nbsp;&nbsp;&nbsp;码 &nbsp;<INPUT
+			class="easyui-passwordbox" tabIndex="2" type="password" maxLength="20" size="40"
+			name="upass"> <br/><br/>验&nbsp;证&nbsp;码&nbsp;
+	<input class="easyui-textbox" type="text" name="val_code" maxLength="21" size="23"/>
 	<img id="image01" src="image.jsp"/>
 	<a href="javascript:void(0)"  onclick="changeImage()">看不清</a>
 	<br/>
