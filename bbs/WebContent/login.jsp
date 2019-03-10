@@ -17,7 +17,7 @@ function changeImage(){
 <!--      用户登录表单        -->
 <DIV class="t" style="MARGIN-TOP: 15px" align="center">
 
-	<FORM name="loginForm" action="<%=request.getContextPath() %>/user.s" method="post">
+	<FORM name="loginForm" action="<%=request.getContextPath() %>/user.s" method="post" id="form">
 		<font color="red">${msg }</font>
 	    <input type="hidden" name="op" value="login" />
 		<br />用户名 &nbsp;
@@ -32,10 +32,9 @@ function changeImage(){
 	<a href="javascript:void(0)"  onclick="changeImage()">看不清</a>
 	<br/>
 			
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="form.submit()">登录</a>
 			
-			
-			 <INPUT class="btn" tabIndex="6"
-			type="submit" value="登 录">
+			 
 	</FORM>
 
 </DIV>

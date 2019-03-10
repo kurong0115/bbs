@@ -27,11 +27,17 @@
 		<input type="hidden" name="op" value="reg">
 		<br/>
 		<br/>用&nbsp;&nbsp;户&nbsp;&nbsp;名 &nbsp;
-			<INPUT class="easyui-textbox" tabIndex="1" type="text" maxLength="20" size="35" name="uname" id="uname">
-		<br/>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码 &nbsp;
-			<INPUT class="easyui-passwordbox" tabIndex="2" type="password" maxLength="20" size="40" name="upass" id="upass">
-		<br/>重复密码 &nbsp;
-			<INPUT class="easyui-passwordbox" tabIndex="3" type="password" maxLength="20" size="40" name="upass1" id="upass1">
+			<INPUT class="easyui-textbox" tabIndex="1" type="text"
+			maxLength="20" size="40" name="uname" id="uname">
+		<br/><br/>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码 &nbsp;
+			
+			<INPUT
+			class="easyui-passwordbox" tabIndex="2" type="password" maxLength="20" size="40"
+			name="upass" id="upass">
+		<br/><br/>重复密码 &nbsp;
+			<INPUT
+			class="easyui-passwordbox" tabIndex="2" type="password" maxLength="20" size="40"
+			name="upass1" id="upass1">
 		<br/>性别 &nbsp;
 			女<input type="radio" name="gender" value="1">
 			男<input type="radio" name="gender" value="2" checked="checked" />
