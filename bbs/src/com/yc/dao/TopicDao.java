@@ -10,6 +10,11 @@ public class TopicDao {
 	
 	private DBHelper db=new DBHelper();
 	
+	/**
+	 * 查询主面板的帖子内容及信息
+	 * @param boardId
+	 * @return
+	 */
 	public List<Map<String, Object>> query(String boardId) {
 		String sql="SELECT\n" +
 				"	a.count,\n" +
@@ -36,12 +41,22 @@ public class TopicDao {
 				") b ON a.topicid = b.topicid";
 		return db.find(sql, boardId);
 	}
-
+	
+	/**
+	 * 将帖子插入到数据库
+	 * @param topic
+	 * @return
+	 */
 	public int insert(TblTopic topic) {
 		String sql="insert into tbl_topic values(null,?,?,?,?,?,?)";
 		return db.update(sql, topic.getTitle(),topic.getContent(),topic.getPublishtime(),null,topic.getUid(),topic.getBoardid());
 	}
 	
+	/**
+	 * 查询帖子的具体内容
+	 * @param topicid
+	 * @return
+	 */
 	public List<Map<String, Object>> selectByDetail(String topicid) {
 		String sql="SELECT\n" +
 				"	a.*, b.uname,\n" +

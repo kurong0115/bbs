@@ -68,21 +68,28 @@
 <BR>
 <%@ include file="foot.jsp" %>
 	<script  type="text/javascript">
-		var flag=true; 
+		var flag=true;
+		var pwdFlag=true;
 		$(function(){
 			$("#upass1").blur(function(){
 				if($("#upass").val()!=$("#upass1").val()){
 					alert("两次输入的密码不一致");
-					flag=false;
+					pwdFlag=false;
+				}else{
+					pwdFlag=true;
 				}
 			});
 			
 			$("#reg").click(function(){
 				if($("#upass").val()!=$("#upass1").val()){
 					alert("两次输入的密码不一致");
-					flag=false;
+					pwdFlag=false;
 				}
-				return flag;
+				if(pwdFlag=true&&flag==true){
+					return true;
+				}else{
+					return false;
+				}
 			})
 			
 			$("#uname").blur(function(){

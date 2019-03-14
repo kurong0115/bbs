@@ -17,8 +17,6 @@ public class JsonModel implements Serializable {
 		this.code = code;
 	}
 
-	
-
 	public Object getObj() {
 		return obj;
 	}

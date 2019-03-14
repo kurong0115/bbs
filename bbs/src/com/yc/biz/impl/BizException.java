@@ -3,7 +3,7 @@ package com.yc.biz.impl;
 public class BizException extends Exception{
 
 	/**
-	 * 用户自定义的异常
+	 * 用户自定义的异常,用户转发一些数据
 	 */
 	private static final long serialVersionUID = 1L;
 

@@ -115,7 +115,7 @@ public class MyUtils {
 	}
 	
 	/**
-	 * 生成一个图片验证码
+	 * 生成一个图片验证码,供邮箱使用
 	 * @return
 	 */
 	public static String createCode() {

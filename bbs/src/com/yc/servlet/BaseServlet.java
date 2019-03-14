@@ -29,7 +29,7 @@ public class BaseServlet extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		//获取op字段
 		String op=request.getParameter("op");
-		//获取op的值调用相对应的方法(反射技术)
+		//获取op的值调用相对应的方法
 		Class<?>[] clazz=new Class<?>[] {
 			HttpServletRequest.class,HttpServletResponse.class
 		};

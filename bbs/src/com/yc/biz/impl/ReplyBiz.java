@@ -11,6 +11,7 @@ import com.yc.dao.ReplyDao;
 public class ReplyBiz {
 	
 	private ReplyDao rd=new ReplyDao();
+	
 	/**
 	 * 用户帖子的回复
 	 * @param reply
