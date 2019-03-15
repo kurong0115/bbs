@@ -27,7 +27,7 @@ public class UserDao {
 	 * @return
 	 */
 	public TblUser login(String uname,String upass) {
-		String sql="select * from tbl_user where uname=? and upass=?";
+		String sql="select a.*,b.* from tbl_user a,tbl_userinfo b where uname=? and upass=?";
 		List<Map<String,Object>> list = db.find(sql, uname,upass);		
 		return (TblUser) MyUtils.ListMapToJavaBean(list, TblUser.class);		
 	}
@@ -56,5 +56,14 @@ public class UserDao {
 		}else {
 			return false;
 		}
+	}
+	
+	/**
+	 * 将数据插入到额外的表里去
+	 * @param uid
+	 */
+	public void insert(Integer uid) {
+		String sql="insert into tbl_userinfo values(?,0,null,null)";
+		db.update(sql, uid);
 	}
 }

@@ -12,7 +12,9 @@ public class TblUser implements Serializable {
 	private String head;
 	private Timestamp regtime;
 	private Integer gender;
-	
+	private Timestamp starttime;
+	private Timestamp endtime;
+	private Integer time;
 
 	public String getUid() {
 		return uid;
@@ -64,6 +66,32 @@ public class TblUser implements Serializable {
 	public void setGender(Integer gender) {
 		this.gender = gender;
 	}
+	
+	
+	
+	public Timestamp getStarttime() {
+		return starttime;
+	}
+
+	public void setStarttime(Timestamp starttime) {
+		this.starttime = starttime;
+	}
+
+	public Timestamp getEndtime() {
+		return endtime;
+	}
+
+	public void setEndtime(Timestamp endtime) {
+		this.endtime = endtime;
+	}
+
+	public Integer getTime() {
+		return time;
+	}
+
+	public void setTime(Integer time) {
+		this.time = time;
+	}
 
 	public TblUser(String uid, String uname, String upass, String head,
 			Timestamp regtime, int gender) {
@@ -82,9 +110,11 @@ public class TblUser implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User [gender=" + gender + ", head=" + head + ", regtime="
-				+ regtime + ", uname=" + uname + ", upass=" + upass
-				+ ", uid=" + uid + "]";
+		return "TblUser [uid=" + uid + ", uname=" + uname + ", upass=" + upass + ", head=" + head + ", regtime="
+				+ regtime + ", gender=" + gender + ", starttime=" + starttime + ", endtime=" + endtime + ", time="
+				+ time + "]";
 	}
+
+	
 
 }
