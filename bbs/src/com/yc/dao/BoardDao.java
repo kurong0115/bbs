@@ -54,6 +54,7 @@ public class BoardDao {
 				"		WHERE\n" +
 				"			a.parentid = 0\n" +
 				"	) a;";
+				
 		return db.find(sql);
 	}
 	
